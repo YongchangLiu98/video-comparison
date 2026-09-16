@@ -1,6 +1,6 @@
 # Video Comparison
 
-公开的 Ref2VA 视频同步对比页面。当前展示全部 8 个用例的 Balanced 与 Quality 模式，每排对比“本次新版”、“上一次”和“本次新版 · Prompt Extender”三条视频。
+公开的 Ref2VA 视频同步对比页面。当前展示全部 8 个用例的 Balanced 与 Quality 模式，每排从左到右对比“本次新版 · Prompt Extender”、“本次新版”和“上一次”三条视频。
 
 ## 在线页面
 

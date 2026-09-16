@@ -1,9 +1,9 @@
 window.COMPARISON_CONFIG = {
   title: "Ref2VA 新版、上一次与 Prompt Extender 同步对比",
   columns: [
+    { id: "extender", label: "本次新版 · Prompt Extender", detail: "2026-09-16 · seed 0" },
     { id: "current", label: "本次新版", detail: "2026-09-15" },
-    { id: "previous", label: "上一次", detail: "2026-09-08" },
-    { id: "extender", label: "本次新版 · Prompt Extender", detail: "2026-09-16 · seed 0" }
+    { id: "previous", label: "上一次", detail: "2026-09-08" }
   ],
   modes: [
     { id: "balanced", label: "Balanced" },
