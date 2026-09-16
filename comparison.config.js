@@ -1,8 +1,9 @@
 window.COMPARISON_CONFIG = {
-  title: "Ref2VA 新版与上一次同步对比",
+  title: "Ref2VA 新版、上一次与 Prompt Extender 同步对比",
   columns: [
     { id: "current", label: "本次新版", detail: "2026-09-15" },
-    { id: "previous", label: "上一次", detail: "2026-09-08" }
+    { id: "previous", label: "上一次", detail: "2026-09-08" },
+    { id: "extender", label: "本次新版 · Prompt Extender", detail: "2026-09-16 · seed 0" }
   ],
   modes: [
     { id: "balanced", label: "Balanced" },
@@ -19,6 +20,7 @@ window.COMPARISON_CONFIG = {
     { id: "08", title: "服装店冲突：吴耐、王刚与沙丽丽" }
   ],
   videoPath(column, item, mode) {
-    return `videos/${column.id}/${item.id}_${item.title}/case_${item.id}_${mode.id}_seed_0.mp4`;
+    const suffix = column.id === "extender" ? "_extender" : "";
+    return `videos/${column.id}/${item.id}_${item.title}/case_${item.id}_${mode.id}_seed_0${suffix}.mp4`;
   }
 };
