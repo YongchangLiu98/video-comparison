@@ -1,6 +1,6 @@
 # Video Comparison
 
-公开的 Ref2VA 视频同步对比页面。当前展示全部 8 个用例的 Balanced 与 Quality 模式，每排从左到右对比“本次新版 · Prompt Extender”、“本次新版”和“上一次”三条视频。
+公开的 Ref2VA 视频同步对比页面。当前展示全部 8 个用例的 Balanced 与 Quality 模式，并提供两个页面标签：“版本比较”和“PE比较器”。PE比较器并排展示MiniMax官方Context-IR、网页端Prompt Extender和无PE原Prompt。
 
 ## 在线页面
 
@@ -15,6 +15,7 @@
 - 切换到另一条视频时，上一条自动静音。
 - 支持任意数量的版本列、用例和模式。
 - Prompt Extender 列使用网页端同一套预生成重写流程；每个用例的 Balanced 与 Quality 共用一份已确认重写结果。
+- 官方Context-IR列使用MiniMax官方重写器；每个用例的Balanced与Quality共用同一份官方重写结果和seed 0。
 
 ## 后续加入新版本
 

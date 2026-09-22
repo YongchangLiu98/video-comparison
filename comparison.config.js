@@ -1,9 +1,25 @@
 window.COMPARISON_CONFIG = {
-  title: "Ref2VA 新版、上一次与 Prompt Extender 同步对比",
-  columns: [
-    { id: "extender", label: "本次新版 · Prompt Extender", detail: "2026-09-16 · seed 0" },
-    { id: "current", label: "本次新版", detail: "2026-09-15" },
-    { id: "previous", label: "上一次", detail: "2026-09-08" }
+  title: "H3 Ref2VA 视频对比",
+  defaultView: "versions",
+  views: [
+    {
+      id: "versions", label: "版本比较",
+      title: "Ref2VA 新版、上一次与 Prompt Extender 同步对比",
+      columns: [
+        { id: "extender", label: "本次新版 · Prompt Extender", detail: "2026-09-16 · seed 0" },
+        { id: "current", label: "本次新版", detail: "2026-09-15 · seed 0" },
+        { id: "previous", label: "上一次", detail: "2026-09-08 · seed 0" }
+      ]
+    },
+    {
+      id: "pe", label: "PE比较器",
+      title: "官方 Context-IR、Prompt Extender 与无 PE 对比",
+      columns: [
+        { id: "official-ir", label: "官方 Context-IR", detail: "MiniMax 官方重写 · seed 0" },
+        { id: "extender", label: "Prompt Extender", detail: "网页端重写 · seed 0" },
+        { id: "current", label: "无 PE", detail: "原 Prompt · seed 0" }
+      ]
+    }
   ],
   modes: [
     { id: "balanced", label: "Balanced" },
@@ -20,7 +36,7 @@ window.COMPARISON_CONFIG = {
     { id: "08", title: "服装店冲突：吴耐、王刚与沙丽丽" }
   ],
   videoPath(column, item, mode) {
-    const suffix = column.id === "extender" ? "_extender" : "";
+    const suffix = column.id === "extender" ? "_extender" : column.id === "official-ir" ? "_official_ir" : "";
     return `videos/${column.id}/${item.id}_${item.title}/case_${item.id}_${mode.id}_seed_0${suffix}.mp4`;
   }
 };
