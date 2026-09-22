@@ -1,6 +1,6 @@
 # Video Comparison
 
-公开的 Ref2VA 视频同步对比页面。当前展示全部 8 个用例的 Balanced 与 Quality 模式，并提供两个页面标签：“版本比较”和“PE比较器”。PE比较器并排展示MiniMax官方Context-IR、网页端Prompt Extender和无PE原Prompt。
+公开的 Ref2VA 视频同步对比页面。当前只展示全部 8 个用例的 Quality 模式，并提供两个页面标签：“版本比较”和“PE比较器”。版本比较依次展示 HyperFlow with PE、HyperFlow 和 SOL H3；PE比较器并排展示 HyperFlow with official IR、HyperFlow with PE 和 HyperFlow 原 Prompt。
 
 ## 在线页面
 
@@ -14,8 +14,9 @@
 - 点击任意视频，只开启该视频声音；再次点击关闭。
 - 切换到另一条视频时，上一条自动静音。
 - 支持任意数量的版本列、用例和模式。
-- Prompt Extender 列使用网页端同一套预生成重写流程；每个用例的 Balanced 与 Quality 共用一份已确认重写结果。
-- 官方Context-IR列使用MiniMax官方重写器；每个用例的Balanced与Quality共用同一份官方重写结果和seed 0。
+- 页面只展示 Quality 模式、seed 0 的结果。
+- HyperFlow with PE 列使用网页端同一套预生成重写流程。
+- HyperFlow with official IR 列使用 MiniMax 官方 Context-IR 重写器。
 
 ## 后续加入新版本
 

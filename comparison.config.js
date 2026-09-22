@@ -1,28 +1,27 @@
 window.COMPARISON_CONFIG = {
-  title: "H3 Ref2VA 视频对比",
+  title: "H3 Ref2VA Quality 视频对比",
   defaultView: "versions",
   views: [
     {
       id: "versions", label: "版本比较",
-      title: "Ref2VA 新版、上一次与 Prompt Extender 同步对比",
+      title: "HyperFlow with PE、HyperFlow 与 SOL H3 同步对比",
       columns: [
-        { id: "extender", label: "本次新版 · Prompt Extender", detail: "2026-09-16 · seed 0" },
-        { id: "current", label: "本次新版", detail: "2026-09-15 · seed 0" },
-        { id: "previous", label: "上一次", detail: "2026-09-08 · seed 0" }
+        { id: "extender", label: "HyperFlow with PE", detail: "HyperFlow 8-step · Prompt Extender · seed 0" },
+        { id: "current", label: "HyperFlow", detail: "HyperFlow 8-step · 原 Prompt · seed 0" },
+        { id: "previous", label: "SOL H3", detail: "FastVideo4 + SOL-BSA · 原 Prompt · seed 0" }
       ]
     },
     {
       id: "pe", label: "PE比较器",
-      title: "官方 Context-IR、Prompt Extender 与无 PE 对比",
+      title: "HyperFlow：官方 Context-IR、PE 与原 Prompt 对比",
       columns: [
-        { id: "official-ir", label: "官方 Context-IR", detail: "MiniMax 官方重写 · seed 0" },
-        { id: "extender", label: "Prompt Extender", detail: "网页端重写 · seed 0" },
-        { id: "current", label: "无 PE", detail: "原 Prompt · seed 0" }
+        { id: "official-ir", label: "HyperFlow with official IR", detail: "MiniMax Context-IR · seed 0" },
+        { id: "extender", label: "HyperFlow with PE", detail: "Prompt Extender · seed 0" },
+        { id: "current", label: "HyperFlow", detail: "原 Prompt · seed 0" }
       ]
     }
   ],
   modes: [
-    { id: "balanced", label: "Balanced" },
     { id: "quality", label: "Quality" }
   ],
   cases: [
