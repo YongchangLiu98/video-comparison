@@ -56,7 +56,8 @@
     columnHeads.innerHTML = view.columns.map(column =>
       `<div>${column.label}${column.detail ? `<div class="column-detail">${column.detail}</div>` : ""}</div>`
     ).join("");
-    comparisons.innerHTML = config.cases.flatMap(item =>
+    const visibleCases = config.cases.filter(item => !item.views || item.views.includes(view.id));
+    comparisons.innerHTML = visibleCases.flatMap(item =>
       config.modes.map(mode => `
         <section class="comparison-row" data-row="case${item.id}-${mode.id}">
           <div class="group-title"><h2>Case ${item.id} · ${item.title}</h2><span class="badge">${mode.label}</span></div>
@@ -64,7 +65,7 @@
             ${view.columns.map(column => `
               <div class="video-cell">
                 <video src="${config.videoPath(column, item, mode)}" muted loop playsinline preload="metadata"></video>
-                <span class="cell-label">${column.label}</span>
+                <span class="cell-label">${item.cellLabels?.[column.id] || column.label}</span>
               </div>`).join("")}
           </div>
         </section>`)

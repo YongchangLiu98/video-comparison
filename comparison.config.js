@@ -25,6 +25,21 @@ window.COMPARISON_CONFIG = {
     { id: "quality", label: "Quality" }
   ],
   cases: [
+    {
+      id: "00",
+      title: "复杂多参考赛车：林雪赛前对话",
+      views: ["pe"],
+      cellLabels: {
+        "official-ir": "H3 官方 Skill 重写",
+        extender: "API Prompt Rewrite",
+        current: "原始 Prompt"
+      },
+      videoPaths: {
+        "official-ir": "videos/official-ir/00_复杂多参考赛车：林雪赛前对话/case_00_quality_seed_0_official_ir.mp4",
+        extender: "videos/extender/00_复杂多参考赛车：林雪赛前对话/case_00_quality_seed_0_extender.mp4",
+        current: "videos/current/00_复杂多参考赛车：林雪赛前对话/case_00_quality_seed_0.mp4"
+      }
+    },
     { id: "01", title: "师徒重逢：江岁欢与楚晨" },
     { id: "02", title: "毒蝎线索：江岁欢与顾锦对峙" },
     { id: "03", title: "宝华殿法事：慧通法师留人" },
@@ -35,6 +50,7 @@ window.COMPARISON_CONFIG = {
     { id: "08", title: "服装店冲突：吴耐、王刚与沙丽丽" }
   ],
   videoPath(column, item, mode) {
+    if (item.videoPaths?.[column.id]) return item.videoPaths[column.id];
     const suffix = column.id === "extender" ? "_extender" : column.id === "official-ir" ? "_official_ir" : "";
     return `videos/${column.id}/${item.id}_${item.title}/case_${item.id}_${mode.id}_seed_0${suffix}.mp4`;
   }

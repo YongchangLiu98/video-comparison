@@ -17,6 +17,7 @@
 - 页面只展示 Quality 模式、seed 0 的结果。
 - HyperFlow with PE 列使用网页端同一套预生成重写流程。
 - HyperFlow with official IR 列使用 MiniMax 官方 Context-IR 重写器。
+- PE 比较器最前面的 Case 00 是复杂多参考赛车用例，三格分别展示 H3 官方 Skill 重写、API Prompt Rewrite 与原始 Prompt；该用例不属于历史版本对比，因此不会出现在“版本比较”标签页。
 
 ## 后续加入新版本
 
