@@ -71,7 +71,7 @@
         if (video.dataset.ready === "true") return;
         video.dataset.ready = "true";
         readyCount += 1;
-        updateProgress("正在加载可见视频");
+        updateProgress("正在加载全部视频");
         if (rowVideos.every(item => item.dataset.ready === "true" || item.dataset.failed === "true")) {
           row.dataset.loading = "false";
           row.dataset.ready = "true";
