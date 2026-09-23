@@ -139,14 +139,6 @@
   document.getElementById("pause").addEventListener("click", pauseAll);
   document.getElementById("restart").addEventListener("click", () => playAll(true));
 
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        activateRow(entry.target);
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { rootMargin: "700px 0px" });
-  document.querySelectorAll(".comparison-row").forEach(row => observer.observe(row));
-  updateProgress("等待可见视频");
+  updateProgress("正在加载全部视频");
+  activateAll();
 })();
