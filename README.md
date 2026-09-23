@@ -1,6 +1,6 @@
 # Video Comparison
 
-公开的 Ref2VA 视频同步对比页面。当前只展示 Quality 模式，并拆分为两个独立页面：“版本比较”和“PE比较器”。版本比较依次展示 HyperFlow with PE、HyperFlow 和 SOL H3；PE比较器展示不同 Prompt 重写方案与原 Prompt。
+公开的 Ref2VA 视频同步对比页面。当前只展示 Quality 模式，并拆分为两个独立页面：“版本比较”和“PE比较器”。版本比较依次展示 HyperFlow with Qwen9B PE、HyperFlow 和 SOL H3；PE比较器统一展示 DeepSeek PE、官方 Context-IR、Qwen9B PE 与原 Prompt。
 
 ## 在线页面
 
@@ -16,7 +16,8 @@
 - 切换到另一条视频时，上一条自动静音。
 - 支持任意数量的版本列、用例和模式。
 - 页面只展示 Quality 模式、seed 0 的结果。
-- HyperFlow with PE 列使用网页端同一套预生成重写流程。
+- DeepSeek PE 列使用新版 `deepseek/deepseek-v4.1-flash`（`h3-official-v8-auto`）预生成重写结果。
+- Qwen9B PE 列是原网页端旧版 Qwen3.5-9B 重写结果。
 - HyperFlow with official IR 列使用 MiniMax 官方 Context-IR 重写器。
 - PE 比较器最前面的 Case 00 是复杂多参考赛车用例，四格分别展示 DeepSeek PE v8、H3 官方 Skill 重写、旧版 API Rewrite 与原始 Prompt；该用例不属于历史版本对比，因此不会出现在“版本比较”页面。
 

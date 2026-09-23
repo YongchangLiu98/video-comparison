@@ -4,19 +4,20 @@ window.COMPARISON_CONFIG = {
   views: [
     {
       id: "versions", label: "版本比较",
-      title: "HyperFlow with PE、HyperFlow 与 SOL H3 同步对比",
+      title: "HyperFlow with Qwen9B PE、HyperFlow 与 SOL H3 同步对比",
       columns: [
-        { id: "extender", label: "HyperFlow with PE", detail: "HyperFlow 8-step · Prompt Extender · seed 0" },
+        { id: "extender", label: "HyperFlow with Qwen9B PE", detail: "HyperFlow 8-step · Qwen3.5-9B · seed 0" },
         { id: "current", label: "HyperFlow", detail: "HyperFlow 8-step · 原 Prompt · seed 0" },
         { id: "previous", label: "SOL H3", detail: "FastVideo4 + SOL-BSA · 原 Prompt · seed 0" }
       ]
     },
     {
       id: "pe", label: "PE比较器",
-      title: "HyperFlow：官方 Context-IR、PE 与原 Prompt 对比",
+      title: "HyperFlow：DeepSeek PE、官方 Context-IR、Qwen9B PE 与原 Prompt 对比",
       columns: [
+        { id: "deepseek-pe", label: "DeepSeek PE", detail: "DeepSeek V4.1 Flash · seed 0" },
         { id: "official-ir", label: "HyperFlow with official IR", detail: "MiniMax Context-IR · seed 0" },
-        { id: "extender", label: "HyperFlow with PE", detail: "Prompt Extender · seed 0" },
+        { id: "extender", label: "Qwen9B PE", detail: "Qwen3.5-9B · seed 0" },
         { id: "current", label: "HyperFlow", detail: "原 Prompt · seed 0" }
       ]
     }
@@ -33,7 +34,7 @@ window.COMPARISON_CONFIG = {
         pe: [
           { id: "deepseek-pe", label: "DeepSeek PE v8", detail: "DeepSeek V4.1 Flash · seed 0" },
           { id: "official-ir", label: "H3 官方 Skill 重写", detail: "官方 Prompt Skill · seed 0" },
-          { id: "extender", label: "旧版 API Rewrite", detail: "旧重写版本 · seed 0" },
+          { id: "extender", label: "Qwen9B PE", detail: "Qwen3.5-9B · seed 0" },
           { id: "current", label: "原始 Prompt", detail: "无重写 · seed 0" }
         ]
       },
@@ -55,6 +56,7 @@ window.COMPARISON_CONFIG = {
   ],
   videoPath(column, item, mode) {
     if (item.videoPaths?.[column.id]) return item.videoPaths[column.id];
+    if (column.id === "deepseek-pe") return `videos/deepseek-pe/${item.id}_${item.title}/case_${item.id}_${mode.id}_seed_0_deepseek_pe.mp4`;
     const suffix = column.id === "extender" ? "_extender" : column.id === "official-ir" ? "_official_ir" : "";
     return `videos/${column.id}/${item.id}_${item.title}/case_${item.id}_${mode.id}_seed_0${suffix}.mp4`;
   }
