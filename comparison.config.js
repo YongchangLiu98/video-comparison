@@ -29,12 +29,16 @@ window.COMPARISON_CONFIG = {
       id: "00",
       title: "复杂多参考赛车：林雪赛前对话",
       views: ["pe"],
-      cellLabels: {
-        "official-ir": "H3 官方 Skill 重写",
-        extender: "API Prompt Rewrite",
-        current: "原始 Prompt"
+      columns: {
+        pe: [
+          { id: "deepseek-pe", label: "DeepSeek PE v8", detail: "DeepSeek V4.1 Flash · seed 0" },
+          { id: "official-ir", label: "H3 官方 Skill 重写", detail: "官方 Prompt Skill · seed 0" },
+          { id: "extender", label: "旧版 API Rewrite", detail: "旧重写版本 · seed 0" },
+          { id: "current", label: "原始 Prompt", detail: "无重写 · seed 0" }
+        ]
       },
       videoPaths: {
+        "deepseek-pe": "videos/deepseek-pe/00_复杂多参考赛车：林雪赛前对话/case_00_quality_seed_0_deepseek_pe.mp4",
         "official-ir": "videos/official-ir/00_复杂多参考赛车：林雪赛前对话/case_00_quality_seed_0_official_ir.mp4",
         extender: "videos/extender/00_复杂多参考赛车：林雪赛前对话/case_00_quality_seed_0_extender.mp4",
         current: "videos/current/00_复杂多参考赛车：林雪赛前对话/case_00_quality_seed_0.mp4"

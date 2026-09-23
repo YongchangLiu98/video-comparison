@@ -3,24 +3,24 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="H3 Ref2VA HyperFlow 与 SOL H3 同步视频对比">
-  <title>H3 Ref2VA Quality 视频对比</title>
+  <meta name="description" content="H3 Ref2VA Prompt 重写视频对比">
+  <title>H3 Ref2VA PE 比较器</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23090b10'/%3E%3Cpath d='M13 18h38v28H13z' fill='none' stroke='%236ee7ff' stroke-width='4'/%3E%3Cpath d='m28 25 13 7-13 7z' fill='%236ee7ff'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="assets/styles.css?v=split-pages-1">
 </head>
-<body data-view="versions">
+<body data-view="pe">
   <header>
     <div>
-      <h1 id="page-title">H3 Ref2VA Quality 视频对比</h1>
+      <h1 id="page-title">H3 Ref2VA PE 比较器</h1>
       <nav class="view-tabs" aria-label="对比页面">
-        <a class="view-tab active" href="index.html">版本比较</a>
-        <a class="view-tab" href="pe.html">PE 比较器</a>
+        <a class="view-tab" href="index.html">版本比较</a>
+        <a class="view-tab active" href="pe.html">PE 比较器</a>
       </nav>
-      <div class="sound-help">声音：点击任意视频画面，只开启该视频；再次点击关闭。其他视频会保持静音。</div>
+      <div class="sound-help">声音：点击任意视频画面，只开启该视频；再次点击关闭。页面会优先加载当前可见用例，向下滚动时继续加载。</div>
       <div class="loading-line"><div class="loading-track"><div class="loading-bar" id="loading-bar"></div></div><div class="status" id="status">准备加载视频…</div></div>
     </div>
     <div class="controls" aria-label="播放控制">
-      <button class="primary" id="play">全部播放</button>
+      <button class="primary" id="play">加载并播放全部</button>
       <button id="pause">全部暂停</button>
       <button id="restart">从头播放</button>
     </div>
@@ -29,7 +29,6 @@
     <div class="column-heads" id="column-heads" aria-hidden="true"></div>
     <div id="comparisons"></div>
   </main>
-  <script>if (location.hash === "#pe") location.replace("pe.html");</script>
   <script src="comparison.config.js?v=split-pages-1"></script>
   <script src="assets/app.js?v=split-pages-1"></script>
 </body>
